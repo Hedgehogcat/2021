@@ -4,9 +4,11 @@ docker安装redis，并用配置启动
 docker pull redis
 2、创建redis本地配置文件
 
+
 　　①、去redis官网下载redis，获取redis.conf文件
 
 　　②、修改redis.conf文件相关配置，主要修改如下：
+
 
 daemonize no#用守护线程的方式启动
 bind 192.168.1.1 # 注释掉这部分，使redis可以外部访问
