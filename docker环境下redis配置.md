@@ -28,9 +28,13 @@ docker run -p 6379:6379 --name redis -v /root/redis/redis.conf:/etc/redis/redis.
 启动命令解释如下：
 
 -p 6379:6379:把容器内的6379端口映射到宿主机6379端口
+
 -v /root/redis/redis.conf:/etc/redis/redis.conf：把宿主机配置好的redis.conf放到容器内的这个位置中
+
 -v /root/redis/data:/data：把redis持久化的数据在宿主机内显示，做数据备份
+
 redis-server /etc/redis/redis.conf：这个是关键配置，让redis不是无配置启动，而是按照这个redis.conf的配置启动
+
 –appendonly yes：redis启动后数据持久化
 
 4、启动后如果出现一些警告，可参考https://www.cnblogs.com/xsjzhao/p/10882870.html进行解决
