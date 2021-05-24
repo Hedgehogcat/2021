@@ -11,11 +11,16 @@ docker pull redis
 
 
 daemonize no#用守护线程的方式启动
+
 bind 192.168.1.1 # 注释掉这部分，使redis可以外部访问
+
 requirepass yourpassword#给redis设置密码
+
 appendonly yes#redis持久化
+
 tcp-keepalive 5 #防止出现远程主机强迫关闭了一个现有的连接的错误
-　　③、使用xftp登录服务器，在/root/redis/data 创建好文件夹用于存放redis数据，这个文件夹位置可自己设定。然后将配置好的redis.conf文件复制入/root/redis/文件夹下。
+　
+　③、使用xftp登录服务器，在/root/redis/data 创建好文件夹用于存放redis数据，这个文件夹位置可自己设定。然后将配置好的redis.conf文件复制入/root/redis/文件夹下。
 
 3、docker启动redis
 
