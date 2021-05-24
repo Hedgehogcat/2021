@@ -9,7 +9,7 @@ docker pull redis
 　　②、修改redis.conf文件相关配置，主要修改如下：
 
 daemonize no#用守护线程的方式启动
-bind 192.168.1.1 #注释掉这部分，使redis可以外部访问
+bind 192.168.1.1 # 注释掉这部分，使redis可以外部访问
 requirepass yourpassword#给redis设置密码
 appendonly yes#redis持久化
 tcp-keepalive 5 #防止出现远程主机强迫关闭了一个现有的连接的错误
