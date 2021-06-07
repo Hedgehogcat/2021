@@ -27,7 +27,6 @@ nuget.exe
 .build/
 /.idea/.idea.CAP
 /.idea
-Properties
 /pack.bat
 .vscode/*
 site/
