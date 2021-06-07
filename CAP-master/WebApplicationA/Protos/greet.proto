@@ -8,6 +8,12 @@ package greet;
 service Greeter {
   // Sends a greeting
   rpc SayHello (HelloRequest) returns (HelloReply);
+  // Sends a greeting
+  rpc SayHi (HiRequest) returns (HiReply);
+   // Sends a greeting
+  rpc SayHelloWorld (HelloWorldRequest) returns (HelloWorldReply);
+       // Sends a greeting
+  rpc SayHelloWorld1 (HelloWorldRequest) returns (HelloWorldReply);
 }
 
 // The request message containing the user's name.
@@ -19,3 +25,23 @@ message HelloRequest {
 message HelloReply {
   string message = 1;
 }
+
+// The request message containing the user's name.
+message HiRequest {
+  string name1 = 1;
+}
+
+// The response message containing the greetings.
+message HiReply {
+  string message1 = 1;
+}
+// The request message containing the user's name.
+message HelloWorldRequest {
+  string name2 = 1;
+}
+
+// The response message containing the greetings.
+message HelloWorldReply {
+  string message2 = 1;
+}
+

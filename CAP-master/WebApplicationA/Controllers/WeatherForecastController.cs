@@ -22,9 +22,9 @@ namespace WebApplicationA.Controllers
                 Code = code;
             }
             public msgBack() { }
-           public string Head { get; set; }
-           public string Body { get; set; }
-          public  string Code { get; set; }
+            public string Head { get; set; }
+            public string Body { get; set; }
+            public string Code { get; set; }
         }
         private static readonly string[] Summaries = new[]
         {
@@ -50,17 +50,51 @@ namespace WebApplicationA.Controllers
             })
             .ToArray();
         }
-        [HttpPost]
-        public async Task <msgBack> Create(string id)
+         [HttpPost]
+        [Route("CreateHello")]
+        public async Task<msgBack> CreateHello(string id)
         {
             var channel = GrpcChannel.ForAddress("https://localhost:5001");
             var client = new Greeter.GreeterClient(channel);
             var reply = await client.SayHelloAsync(
-                new HelloRequest { Name = "晓晨" });
-            msgBack back = new msgBack(id,"Greeter 服务返回数据: " + reply.Message,"success");
+                new HelloRequest { Name = "liyi" });
+            msgBack back = new msgBack(id, "Greeter 服务返回数据: " + reply.Message, "success");
             return back;
         }
-        
+
+        [HttpPost]
+        [Route("CreateHi")]
+        public async Task<msgBack> CreateHi(string id)
+        {
+            var channel = GrpcChannel.ForAddress("https://localhost:5001");
+            var client = new Greeter.GreeterClient(channel);
+            var reply = await client.SayHiAsync(
+                new HiRequest { Name1 = "liyi" });
+            msgBack back = new msgBack(id, "Greeter 服务返回数据: " + reply.Message1, "success");
+            return back;
+        }
+       [HttpPost]
+        [Route("CreateHelloWorld")]
+        public async Task<msgBack> CreateHelloWorld(string id)
+        {
+            var channel = GrpcChannel.ForAddress("https://localhost:5001");
+            var client = new Greeter.GreeterClient(channel);
+            var reply = await client.SayHelloWorldAsync(
+                new HelloWorldRequest { Name2 = "liyi" });
+            msgBack back = new msgBack(id, "Greeter 服务返回数据: " + reply.Message2, "success");
+            return back;
+        } 
+        [HttpPost]
+        [Route("CreateHelloWorld1")]
+        public async Task<msgBack> CreateHelloWorld1(string id)
+        {
+            var channel = GrpcChannel.ForAddress("https://localhost:5001");
+            var client = new Greeter.GreeterClient(channel);
+            var reply = await client.SayHelloWorld1Async(
+                new HelloWorldRequest { Name2 = "liyi" });
+            msgBack back = new msgBack(id, "Greeter1 服务返回数据: " + reply.Message2, "success");
+            return back;
+        }
     }
-   
+
 }
