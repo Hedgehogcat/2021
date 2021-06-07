@@ -31,7 +31,7 @@ namespace MyLocalCap
             services.AddControllers();
             services.AddSwaggerGen(c =>
           {
-              c.SwaggerDoc("v1", new OpenApiInfo { Title = "Samples.Redis.SqlServer", Version = "v1" });
+              c.SwaggerDoc("v1", new OpenApiInfo { Title = "Samples.Redis", Version = "v1" });
           });
             services.AddCap(options =>
            {
