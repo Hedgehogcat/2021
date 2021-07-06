@@ -1,7 +1,12 @@
+using Dapper;
 using Grpc.Core;
 using Microsoft.Extensions.Logging;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -14,9 +19,36 @@ namespace GrpcServiceA
         {
             _logger = logger;
         }
+        //建立数据库连接
+        public static MySqlConnection mysqlconn()
+        {
+            string ConnString = AppSetting.GetConfig("ConnectionStrings:BaseDb");
+            var conntion = new MySqlConnection(ConnString);
+            conntion.Open();
+            return conntion;
+        }
+
+        //列表
+        public List<User> GetList()
+        {
+            using (IDbConnection con = mysqlconn())
+            {
+                string sqlcommandtex = "select * from User";
+                List<User> userlist = SqlMapper.Query<User>(con, sqlcommandtex).ToList();
+                return userlist;
+            }
+        }
+        public class User
+        {
+            public int ID { get; set; }
+            public int PersonID { get; set; }
+            public string PersonName { get; set; }
+        }
 
         public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
         {
+            List<User> users = GetList();
+
             return Task.FromResult(new HelloReply
             {
                 Message = "Hello " + request.Name
