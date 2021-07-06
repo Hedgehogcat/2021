@@ -1,3 +1,4 @@
+using BasicClassLibrary;
 using Dapper;
 using Grpc.Core;
 using Microsoft.Extensions.Logging;
@@ -38,12 +39,7 @@ namespace GrpcServiceA
                 return userlist;
             }
         }
-        public class User
-        {
-            public int ID { get; set; }
-            public int PersonID { get; set; }
-            public string PersonName { get; set; }
-        }
+        
 
         public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
         {

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <UserSecretsId>a7b47edc-3bbb-4572-85e7-3505be0c3522</UserSecretsId>
+    <UserSecretsId>d8857d9c-114e-4b07-93d1-bf39a0fd6a46</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
 
@@ -11,13 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="6.2.0" />
-    <PackageReference Include="Dapper" Version="2.0.90" />
     <PackageReference Include="Grpc.AspNetCore" Version="2.38.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
-    <PackageReference Include="MySql.Data" Version="8.0.25" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+    <PackageReference Include="SqlSugar.IOC" Version="1.5.0" />
+    <PackageReference Include="SqlSugarCore" Version="5.0.3.2" />
   </ItemGroup>
 
   <ItemGroup>
