@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -21,7 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BasicClassLibrary\BasicClassLibrary.csproj" />
+    <Reference Include="BasicClassLibrary">
+      <HintPath>..\BasicClassLibrary\bin\Debug\netstandard2.0\BasicClassLibrary.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

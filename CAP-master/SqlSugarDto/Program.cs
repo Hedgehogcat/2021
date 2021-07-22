@@ -15,7 +15,7 @@ namespace SqlSugarDto
                 IsAutoCloseConnection = true
             });
 
-            db.DbFirst.IsCreateAttribute().CreateClassFile("f:\\1", "Models");
+            db.DbFirst.IsCreateAttribute().CreateClassFile("E:\\Code\\2021Code\\2021\\CAP-master\\SqlSugarDto\\Models", "Models");
             Console.WriteLine("Hello World!");
             Console.ReadKey();
         }
