@@ -1,5 +1,6 @@
 ﻿using Grpc.Net.Client;
 using GrpcServiceA;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -39,6 +40,7 @@ namespace WebApplicationA.Controllers
         }
 
         [HttpGet]
+        [Route("Get")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
@@ -50,7 +52,21 @@ namespace WebApplicationA.Controllers
             })
             .ToArray();
         }
-         [HttpPost]
+        [HttpGet]
+        [Route("Get123")]
+        public msgBack Get123([FromHeader]string author)
+        {
+            var Back = new msgBack();
+             Back.Head = "header";
+             Back.Code = "200";
+            if (string.IsNullOrEmpty(author)){
+                Back.Code = "404";
+            }
+            Back.Body = author;
+            return Back;
+
+        }
+        [HttpPost]
         [Route("CreateHello")]
         public async Task<msgBack> CreateHello(string id)
         {
@@ -73,7 +89,7 @@ namespace WebApplicationA.Controllers
             msgBack back = new msgBack(id, "Greeter 服务返回数据: " + reply.Message1, "success");
             return back;
         }
-       [HttpPost]
+        [HttpPost]
         [Route("CreateHelloWorld")]
         public async Task<msgBack> CreateHelloWorld(string id)
         {
@@ -83,7 +99,7 @@ namespace WebApplicationA.Controllers
                 new HelloWorldRequest { Name2 = "liyi" });
             msgBack back = new msgBack(id, "Greeter 服务返回数据: " + reply.Message2, "success");
             return back;
-        } 
+        }
         [HttpPost]
         [Route("CreateHelloWorld1")]
         public async Task<msgBack> CreateHelloWorld1(string id)
