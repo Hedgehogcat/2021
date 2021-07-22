@@ -23,6 +23,11 @@
 <ItemGroup>
     <Protobuf Include="Protos\greet.proto" GrpcServices="Client" />
   </ItemGroup>
+<ItemGroup>
+  <Reference Include="SqlSugarDto">
+    <HintPath>..\SqlSugarDto\bin\Debug\netcoreapp3.1\SqlSugarDto.dll</HintPath>
+  </Reference>
+</ItemGroup>
   
 
 </Project>

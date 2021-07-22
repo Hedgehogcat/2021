@@ -3,6 +3,7 @@ using GrpcServiceA;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,10 +55,10 @@ namespace WebApplicationA.Controllers
         }
         [HttpGet]
         [Route("Get123")]
-        public msgBack Get123([FromHeader]string author)
+        public msgBack Get123([FromHeader]string author,[FromQuery]int id)
         {
             var Back = new msgBack();
-             Back.Head = "header";
+             Back.Head = id.ToString();
              Back.Code = "200";
             if (string.IsNullOrEmpty(author)){
                 Back.Code = "404";
@@ -68,13 +69,13 @@ namespace WebApplicationA.Controllers
         }
         [HttpPost]
         [Route("CreateHello")]
-        public async Task<msgBack> CreateHello(string id)
+        public async Task<msgBack> CreateHello([FromBody]User user)
         {
             var channel = GrpcChannel.ForAddress("https://localhost:5001");
             var client = new Greeter.GreeterClient(channel);
             var reply = await client.SayHelloAsync(
                 new HelloRequest { Name = "liyi" });
-            msgBack back = new msgBack(id, "Greeter 服务返回数据: " + reply.Message, "success");
+            msgBack back = new msgBack(user.personname, "Greeter 服务返回数据: " + reply.Message, "success");
             return back;
         }
 
