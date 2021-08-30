@@ -1,0 +1,17 @@
+E:\Code\2021Code\2021\CAP-master\BasicClassLibrary\bin\Debug\netstandard2.0\BasicClassLibrary.deps.json
+E:\Code\2021Code\2021\CAP-master\BasicClassLibrary\bin\Debug\netstandard2.0\BasicClassLibrary.dll
+E:\Code\2021Code\2021\CAP-master\BasicClassLibrary\bin\Debug\netstandard2.0\BasicClassLibrary.pdb
+E:\Code\2021Code\2021\CAP-master\BasicClassLibrary\obj\Debug\netstandard2.0\BasicClassLibrary.csprojAssemblyReference.cache
+E:\Code\2021Code\2021\CAP-master\BasicClassLibrary\obj\Debug\netstandard2.0\BasicClassLibrary.AssemblyInfoInputs.cache
+E:\Code\2021Code\2021\CAP-master\BasicClassLibrary\obj\Debug\netstandard2.0\BasicClassLibrary.AssemblyInfo.cs
+E:\Code\2021Code\2021\CAP-master\BasicClassLibrary\obj\Debug\netstandard2.0\BasicClassLibrary.csproj.CoreCompileInputs.cache
+E:\Code\2021Code\2021\CAP-master\BasicClassLibrary\obj\Debug\netstandard2.0\BasicClassLibrary.dll
+E:\Code\2021Code\2021\CAP-master\BasicClassLibrary\obj\Debug\netstandard2.0\BasicClassLibrary.pdb
+E:\Code\2021Code\2021\BasicSolution\BasicClassLibrary\bin\Debug\netstandard2.0\BasicClassLibrary.deps.json
+E:\Code\2021Code\2021\BasicSolution\BasicClassLibrary\bin\Debug\netstandard2.0\BasicClassLibrary.dll
+E:\Code\2021Code\2021\BasicSolution\BasicClassLibrary\bin\Debug\netstandard2.0\BasicClassLibrary.pdb
+E:\Code\2021Code\2021\BasicSolution\BasicClassLibrary\obj\Debug\netstandard2.0\BasicClassLibrary.AssemblyInfoInputs.cache
+E:\Code\2021Code\2021\BasicSolution\BasicClassLibrary\obj\Debug\netstandard2.0\BasicClassLibrary.AssemblyInfo.cs
+E:\Code\2021Code\2021\BasicSolution\BasicClassLibrary\obj\Debug\netstandard2.0\BasicClassLibrary.csproj.CoreCompileInputs.cache
+E:\Code\2021Code\2021\BasicSolution\BasicClassLibrary\obj\Debug\netstandard2.0\BasicClassLibrary.dll
+E:\Code\2021Code\2021\BasicSolution\BasicClassLibrary\obj\Debug\netstandard2.0\BasicClassLibrary.pdb

@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <UserSecretsId>d8857d9c-114e-4b07-93d1-bf39a0fd6a46</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.38.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="SqlSugar.IOC" Version="1.5.0" />
+    <PackageReference Include="SqlSugarCore" Version="5.0.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="BasicClassLibrary">
+      <HintPath>..\BasicClassLibrary\bin\Debug\netstandard2.0\BasicClassLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
