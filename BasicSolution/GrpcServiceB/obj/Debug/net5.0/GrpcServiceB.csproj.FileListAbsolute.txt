@@ -73,11 +73,13 @@ E:\Code\2021Code\2021\CAP-master\GrpcServiceB\obj\Debug\net5.0\GrpcServiceB.dll
 E:\Code\2021Code\2021\CAP-master\GrpcServiceB\obj\Debug\net5.0\ref\GrpcServiceB.dll
 E:\Code\2021Code\2021\CAP-master\GrpcServiceB\obj\Debug\net5.0\GrpcServiceB.pdb
 E:\Code\2021Code\2021\CAP-master\GrpcServiceB\obj\Debug\net5.0\GrpcServiceB.genruntimeconfig.cache
+E:\Code\2021Code\2021\BasicSolution\GrpcServiceB\obj\Debug\net5.0\GrpcServiceB.csprojAssemblyReference.cache
 E:\Code\2021Code\2021\BasicSolution\GrpcServiceB\obj\Debug\net5.0\GrpcServiceB.GeneratedMSBuildEditorConfig.editorconfig
 E:\Code\2021Code\2021\BasicSolution\GrpcServiceB\obj\Debug\net5.0\GrpcServiceB.AssemblyInfoInputs.cache
 E:\Code\2021Code\2021\BasicSolution\GrpcServiceB\obj\Debug\net5.0\GrpcServiceB.AssemblyInfo.cs
 E:\Code\2021Code\2021\BasicSolution\GrpcServiceB\obj\Debug\net5.0\GrpcServiceB.csproj.CoreCompileInputs.cache
 E:\Code\2021Code\2021\BasicSolution\GrpcServiceB\obj\Debug\net5.0\GrpcServiceB.MvcApplicationPartsAssemblyInfo.cache
+E:\Code\2021Code\2021\BasicSolution\GrpcServiceB\bin\Debug\net5.0\SqlSugarDto.exe
 E:\Code\2021Code\2021\BasicSolution\GrpcServiceB\bin\Debug\net5.0\appsettings.Development.json
 E:\Code\2021Code\2021\BasicSolution\GrpcServiceB\bin\Debug\net5.0\appsettings.json
 E:\Code\2021Code\2021\BasicSolution\GrpcServiceB\bin\Debug\net5.0\GrpcServiceB.exe
@@ -137,8 +139,9 @@ E:\Code\2021Code\2021\BasicSolution\GrpcServiceB\bin\Debug\net5.0\runtimes\unix\
 E:\Code\2021Code\2021\BasicSolution\GrpcServiceB\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Data.SqlClient.dll
 E:\Code\2021Code\2021\BasicSolution\GrpcServiceB\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 E:\Code\2021Code\2021\BasicSolution\GrpcServiceB\bin\Debug\net5.0\BasicClassLibrary.dll
+E:\Code\2021Code\2021\BasicSolution\GrpcServiceB\bin\Debug\net5.0\SqlSugarDto.dll
 E:\Code\2021Code\2021\BasicSolution\GrpcServiceB\bin\Debug\net5.0\BasicClassLibrary.pdb
-E:\Code\2021Code\2021\BasicSolution\GrpcServiceB\obj\Debug\net5.0\GrpcServiceB.csprojAssemblyReference.cache
+E:\Code\2021Code\2021\BasicSolution\GrpcServiceB\bin\Debug\net5.0\SqlSugarDto.pdb
 E:\Code\2021Code\2021\BasicSolution\GrpcServiceB\obj\Debug\net5.0\staticwebassets\GrpcServiceB.StaticWebAssets.Manifest.cache
 E:\Code\2021Code\2021\BasicSolution\GrpcServiceB\obj\Debug\net5.0\staticwebassets\GrpcServiceB.StaticWebAssets.xml
 E:\Code\2021Code\2021\BasicSolution\GrpcServiceB\obj\Debug\net5.0\scopedcss\bundle\GrpcServiceB.styles.css

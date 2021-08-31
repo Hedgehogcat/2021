@@ -1,5 +1,6 @@
 using BasicClassLibrary;
 using Dapper;
+using DBModels;
 using Grpc.Core;
 using Microsoft.Extensions.Logging;
 using MySql.Data.MySqlClient;
@@ -30,12 +31,12 @@ namespace GrpcServiceA
         }
 
         //ап╠М
-        public List<User> GetList()
+        public List<yaeherpatientdoctor> GetList()
         {
             using (IDbConnection con = mysqlconn())
             {
-                string sqlcommandtex = "select * from User";
-                List<User> userlist = SqlMapper.Query<User>(con, sqlcommandtex).ToList();
+                string sqlcommandtex = "select * from yaeherpatientdoctor";
+                List<yaeherpatientdoctor> userlist = SqlMapper.Query<yaeherpatientdoctor>(con, sqlcommandtex).ToList();
                 return userlist;
             }
         }
@@ -43,7 +44,7 @@ namespace GrpcServiceA
 
         public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
         {
-            List<User> users = GetList();
+            List<yaeherpatientdoctor> users = GetList();
 
             return Task.FromResult(new HelloReply
             {

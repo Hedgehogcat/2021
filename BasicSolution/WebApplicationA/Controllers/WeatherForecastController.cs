@@ -1,9 +1,10 @@
-﻿using Grpc.Net.Client;
+﻿using BasicClassLibrary;
+using DBModels;
+using Grpc.Net.Client;
 using GrpcServiceA;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,19 +16,7 @@ namespace WebApplicationA.Controllers
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
-        public class msgBack
-        {
-            public msgBack(string head, string body, string code)
-            {
-                Head = head;
-                Body = body;
-                Code = code;
-            }
-            public msgBack() { }
-            public string Head { get; set; }
-            public string Body { get; set; }
-            public string Code { get; set; }
-        }
+
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -55,62 +44,63 @@ namespace WebApplicationA.Controllers
         }
         [HttpGet]
         [Route("Get123")]
-        public msgBack Get123([FromHeader]string author,[FromQuery]int id)
+        public ApiResult Get123([FromHeader] string author, [FromQuery] int id)
         {
-            var Back = new msgBack();
-             Back.Head = id.ToString();
-             Back.Code = "200";
-            if (string.IsNullOrEmpty(author)){
-                Back.Code = "404";
+            var result = new ApiResult();
+            result.Data = id.ToString();
+            result.Code = 200;
+            if (string.IsNullOrEmpty(author))
+            {
+                result.Code = 404;
             }
-            Back.Body = author;
-            return Back;
+            result.Msg = author;
+            return result;
 
         }
         [HttpPost]
         [Route("CreateHello")]
-        public async Task<msgBack> CreateHello([FromBody]User user)
+        public async Task<ApiResult> CreateHello([FromBody] yaeherpatientdoctor user)
         {
             var channel = GrpcChannel.ForAddress("https://localhost:5001");
             var client = new Greeter.GreeterClient(channel);
             var reply = await client.SayHelloAsync(
                 new HelloRequest { Name = "liyi" });
-            msgBack back = new msgBack(user.personname, "Greeter 服务返回数据: " + reply.Message, "success");
-            return back;
+            ApiResult result = new ApiResult(200, "success", "Greeter 服务返回数据: " + user.DoctorID + user.DoctorName + reply.Message);
+            return result;
         }
 
         [HttpPost]
         [Route("CreateHi")]
-        public async Task<msgBack> CreateHi(string id)
+        public async Task<ApiResult> CreateHi(string id)
         {
             var channel = GrpcChannel.ForAddress("https://localhost:5001");
             var client = new Greeter.GreeterClient(channel);
             var reply = await client.SayHiAsync(
                 new HiRequest { Name1 = "liyi" });
-            msgBack back = new msgBack(id, "Greeter 服务返回数据: " + reply.Message1, "success");
-            return back;
+            ApiResult result = new ApiResult(200, "success", "Greeter 服务返回数据: " + id + reply.Message1);
+            return result;
         }
         [HttpPost]
         [Route("CreateHelloWorld")]
-        public async Task<msgBack> CreateHelloWorld(string id)
+        public async Task<ApiResult> CreateHelloWorld(string id)
         {
             var channel = GrpcChannel.ForAddress("https://localhost:5001");
             var client = new Greeter.GreeterClient(channel);
             var reply = await client.SayHelloWorldAsync(
                 new HelloWorldRequest { Name2 = "liyi" });
-            msgBack back = new msgBack(id, "Greeter 服务返回数据: " + reply.Message2, "success");
-            return back;
+            ApiResult result = new ApiResult(200, "success", "Greeter 服务返回数据: " + id + reply.Message2);
+            return result;
         }
         [HttpPost]
         [Route("CreateHelloWorld1")]
-        public async Task<msgBack> CreateHelloWorld1(string id)
+        public async Task<ApiResult> CreateHelloWorld1(string id)
         {
             var channel = GrpcChannel.ForAddress("https://localhost:5001");
             var client = new Greeter.GreeterClient(channel);
             var reply = await client.SayHelloWorld1Async(
                 new HelloWorldRequest { Name2 = "liyi" });
-            msgBack back = new msgBack(id, "Greeter1 服务返回数据: " + reply.Message2, "success");
-            return back;
+            ApiResult result = new ApiResult(200, "success", "Greeter1 服务返回数据: " + id + reply.Message2);
+            return result;
         }
     }
 

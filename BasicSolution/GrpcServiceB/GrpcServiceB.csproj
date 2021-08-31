@@ -18,9 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="BasicClassLibrary">
-      <HintPath>..\BasicClassLibrary\bin\Debug\netstandard2.0\BasicClassLibrary.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\BasicClassLibrary\BasicClassLibrary.csproj" />
+    <ProjectReference Include="..\SqlSugarDto\SqlSugarDto.csproj" />
   </ItemGroup>
 
 </Project>

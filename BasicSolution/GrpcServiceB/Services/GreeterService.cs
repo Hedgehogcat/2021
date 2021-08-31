@@ -1,4 +1,5 @@
 using BasicClassLibrary;
+using DBModels;
 using Grpc.Core;
 using Microsoft.Extensions.Logging;
 using SqlSugar.IOC;
@@ -24,7 +25,7 @@ namespace GrpcServiceB
             int totalCount = 0;
              
             //µ•±Ì∑÷“≥
-            List<User> page =  DbScoped.Sugar.Queryable<User>().ToPageList(pageIndex, pageSize, ref totalCount);
+            List<yaeherpatientdoctor> page =  DbScoped.Sugar.Queryable<yaeherpatientdoctor>().ToPageList(pageIndex, pageSize, ref totalCount);
 
 
             return Task.FromResult(new HelloReply
